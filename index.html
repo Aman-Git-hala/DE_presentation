@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Digital India & the OTT Revolution</title>
+
+    <!-- Reveal.js core CSS & theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
+
+    <!-- Chart.js and Annotation Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom styles for a minimalist, high-contrast look -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        :root {
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Inter', sans-serif;
+            --r-background-color: #121212;
+            --r-main-color: #e0e0e0;
+            --r-heading-color: #ffffff;
+            --r-link-color: #d7dddf;
+            --r-accent-color: #f5f5f5;
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 168, 232, 0.3);
+        }
+        
+        .reveal h2 {
+            font-size: 2em;
+            color: var(--r-accent-color);
+        }
+
+        .reveal p, .reveal li {
+            font-size: 0.85em;
+            line-height: 1.7;
+        }
+        
+        .reveal section {
+            padding: 20px;
+        }
+
+        .title-slide {
+            text-align: center;
+        }
+        .title-slide h1 {
+            font-size: 3.2em;
+        }
+        .title-slide h3 {
+            font-size: 1.4em;
+            margin-top: 25px;
+            color: #a0a0a0;
+        }
+        .title-slide p {
+            font-size: 1em;
+            margin-top: 60px;
+        }
+        
+        .hook-slide {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .hook-question {
+            font-size: 2.5em !important;
+            font-weight: 600;
+        }
+        .hook-answer {
+            font-size: 4em !important;
+            font-weight: 700;
+            color: var(--r-accent-color);
+            margin-top: 20px;
+        }
+        .hook-context {
+            font-size: 1.2em !important;
+            color: #b0b0b0;
+        }
+
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 70vh;
+            width: 80vw;
+        }
+
+        /* --- NEW & IMPROVED PRINT STYLES --- */
+        @media print {
+          @page {
+            size: 16in 9in; /* This forces a 16:9 aspect ratio */
+            margin: 0;
+          }
+          body {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+          /* This is the new forceful rule to ensure backgrounds print */
+          .reveal .slides section {
+            background: var(--r-background-color) !important;
+          }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: The Hook (Question) -->
+            <section class="hook-slide">
+                <h2 class="hook-question">How do you rewire a billion-person economy in just one decade?</h2>
+            </section>
+            
+            <!-- Slide 2: The Hook (Answer) -->
+            <section class="hook-slide">
+                <p class="hook-context">You start by making data cheaper than water.</p>
+                <h1 class="hook-answer">98%</h1>
+                <p class="hook-context">That's the drop in the cost of 1GB of mobile data in India from 2015 to 2025. <br>This collapse in cost wasn't an accident. It was the fuel for a revolution.</p>
+            </section>
+
+            <!-- Slide 3: Title Slide -->
+            <section class="title-slide">
+                <h1>Digital India & the OTT Revolution</h1>
+                <h3>How Infrastructure, Ambition, and Content Changed Everything (2015-2025)</h3>
+                <p class="mt-20">
+                    Aman Githala &nbsp;&nbsp;&bull;&nbsp;&nbsp; Ravi Kumar &nbsp;&nbsp;&bull;&nbsp;&nbsp; Ansh Kumar 
+                </p>
+            </section>
+
+            <!-- Slide 4: Introduction -->
+            <section>
+                <h2>The Plumbing and The Product</h2>
+                <p class="mt-8 fragment">The story of India's last decade is one of symbiotic transformation. The <strong>Digital India</strong> initiative architected the digital 'plumbing'—the essential infrastructure of connectivity, identity, and payments.</p>
+                <p class="mt-4 fragment">Upon this foundation, Over-The-Top (OTT) platforms built a multi-billion dollar 'product' ecosystem, fundamentally changing how a billion people consume content, do business, and live their lives.</p>
+            </section>
+
+            <!-- Slide 5: Key Pillars -->
+            <section>
+                <h2>The Three Pillars of Transformation</h2>
+                <div class="mt-8 grid grid-cols-3 gap-8">
+                    <div class="text-center fragment">
+                        <h4 class="font-semibold text-sky-400">Broadband Highways</h4>
+                        <p>Affordable, pervasive mobile data (4G/5G) became the pipeline for video, moving it from a luxury to a utility.</p>
+                    </div>
+                    <div class="text-center fragment" data-fragment-index="2">
+                        <h4 class="font-semibold text-sky-400">Digital Identity & Services</h4>
+                        <p>Aadhaar simplified user onboarding, creating a trusted identity layer for the new digital economy.</p>
+                    </div>
+                    <div class="text-center fragment" data-fragment-index="3">
+                        <h4 class="font-semibold text-sky-400">Frictionless Payments (UPI)</h4>
+                        <p>UPI removed payment barriers, making micro-subscriptions effortless and unlocking the market at scale.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Chart 1 - Internet Users vs Data Cost -->
+            <section>
+                <h2>The Catalyst: Access & Affordability</h2>
+                <p class="text-center">As data costs plummeted, hundreds of millions came online for the first time.</p>
+                <div class="chart-container mt-4">
+                    <canvas id="internetUsersChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Slide 7: Chart 2 - OTT Revenue Growth -->
+            <section>
+                <h2>Result: A Multi-Billion Dollar Content Market</h2>
+                <p class="text-center">This new audience fueled explosive growth in the OTT industry.</p>
+                <div class="chart-container mt-4">
+                    <canvas id="ottRevenueChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Slide 8: Chart 3 - UPI Transactions -->
+            <section>
+                <h2>The Engine: Frictionless Monetization</h2>
+                <p class="text-center">UPI's rise enabled the seamless transactions necessary for a subscription economy.</p>
+                <div class="chart-container mt-4">
+                    <canvas id="upiChart"></canvas>
+                </div>
+            </section>
+            
+            <!-- Slide 9: Sectoral Impact -->
+            <section>
+                <h2>The Ripple Effect: Beyond Entertainment</h2>
+                <p class="mt-8">The influence of OTT platforms extended far beyond entertainment, setting new standards for digital engagement across every major sector of the economy.</p>
+            </section>
+            
+            <!-- Slide 10: Sectoral Impact Details -->
+            <section>
+                <h3>Adopting the OTT Playbook</h3>
+                <div class="mt-8 grid grid-cols-2 gap-x-12 gap-y-6">
+                    <div class="fragment">
+                        <h4 class="font-semibold text-sky-400">Education</h4>
+                        <p>Ed-tech platforms adopted on-demand, bingeable course modules, mirroring OTT's user experience to scale learning.</p>
+                    </div>
+                    <div class="fragment">
+                        <h4 class="font-semibold text-sky-400">Healthcare</h4>
+                        <p>Telemedicine and health awareness initiatives adopted a video-first strategy, delivering critical information with unprecedented reach.</p>
+                    </div>
+                    <div class="fragment">
+                        <h4 class="font-semibold text-sky-400">Governance & Commerce</h4>
+                        <p>From public campaigns to e-commerce, video became the primary medium, leveraging the same distribution models OTTs perfected.</p>
+                    </div>
+                    <div class="fragment">
+                        <h4 class="font-semibold text-sky-400">Industry & Jobs</h4>
+                        <p>A boom in domestic content creation led to an entire ecosystem of studios, writers, VFX artists, and production houses.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Technological Advancements -->
+            <section>
+                <h2>The Tech Behind the Stream</h2>
+                <p class="mt-8">The seamless experience is powered by a sophisticated stack of modern technologies that scaled across India's diverse geography and network conditions.</p>
+            </section>
+
+            <!-- Slide 12: Key Technologies -->
+            <section>
+                <h3>The Stack That Made Streaming Possible</h3>
+                <ul class="mt-8 space-y-4">
+                    <li class="fragment"><strong>AI & Machine Learning:</strong> The core of personalization, powering recommendation engines, automated subtitling, and content discovery.</li>
+                    <li class="fragment"><strong>CDNs & Edge Computing:</strong> Reduced latency by caching content closer to users, ensuring smooth playback even in low-bandwidth areas.</li>
+                    <li class="fragment"><strong>Adaptive Streaming:</strong> Intelligently adjusted video quality in real-time based on internet speed, eliminating buffering.</li>
+                    <li class="fragment"><strong>Cloud & Microservices:</strong> Provided the scalable, pay-as-you-go infrastructure needed for global delivery and handling massive traffic spikes.</li>
+                </ul>
+            </section>
+            
+            <!-- Slide 13: Challenges & Limitations -->
+            <section>
+                <h2>Challenges on the Path</h2>
+                <p class="mt-8">The journey has been transformative, but bridging the remaining gaps is critical for the next phase of digital expansion.</p>
+            </section>
+            
+            <!-- Slide 14: Challenges Details -->
+            <section>
+                <h3>The Persistent Digital Divide</h3>
+                <ul class="mt-8 space-y-4">
+                    <li class="fragment"><strong>Infrastructure Gaps:</strong> Consistent high-speed internet is still a challenge in many remote areas.</li>
+                    <li class="fragment"><strong>Cybersecurity & Piracy:</strong> A constant battle against account takeovers, credential sharing, and illegal content distribution.</li>
+                    <li class="fragment"><strong>Monetization & Regulation:</strong> Balancing low ARPU in a price-sensitive market with evolving content moderation rules remains a key challenge.</li>
+                </ul>
+            </section>
+
+            <!-- Slide 15: Future Outlook -->
+            <section>
+                <h2>Vision Beyond 2025: India's Techade</h2>
+                <p class="mt-8">The foundation is set. The next decade will be defined by deepening integration, innovation in formats, and a greater global role for India's digital ecosystem.</p>
+            </section>
+            
+            <!-- Slide 16: Future Trends -->
+            <section>
+                <h3>The Next Wave of Digital Innovation</h3>
+                <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+                    <div class="p-4 bg-gray-800 rounded-lg fragment">
+                        <h4 class="font-semibold">Hyper-Localization</h4>
+                        <p>Content for specific regions, dialects, and cultures to unlock the next 200 million users.</p>
+                    </div>
+                    <div class="p-4 bg-gray-800 rounded-lg fragment">
+                        <h4 class="font-semibold">Interactive Formats</h4>
+                        <p>5G enabling live interactive sports, AR/VR experiences, and gamified content.</p>
+                    </div>
+                    <div class="p-4 bg-gray-800 rounded-lg fragment">
+                        <h4 class="font-semibold">Creator Economy</h4>
+                        <p>The line between studio content and creator-led IP will blur, with platforms monetizing both globally.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 17: The Global Stage -->
+            <section>
+                <h3>From Local Market to Global Hub</h3>
+                <p class="mt-8">India is no longer just a consumer; it's a global hub for content creation and digital innovation. The lessons from scaling Digital Public Infrastructure (DPI) are now a blueprint for other nations, positioning India as a leader in the global digital landscape.</p>
+            </section>
+            
+            <!-- Slide 18: Conclusion -->
+            <section>
+                <h2>Conclusion: A Symbiotic Revolution</h2>
+                <p class="mt-8">The rise of OTT in India is inseparable from the success of Digital India. One provided the canvas; the other painted the masterpiece. Together, they created a vibrant digital economy that has reshaped society and set the stage for the next decade of innovation.</p>
+            </section>
+
+            <!-- Slide 19: Q&A -->
+            <section class="title-slide">
+                <h2>Questions & Answers</h2>
+            </section>
+            
+            <!-- Slide 20: Thank You -->
+            <section class="title-slide">
+                <h1>Thank You</h1>
+                <p class="mt-8">
+                     Aman Githala &nbsp;&bull;&nbsp; Ravi Kumar &nbsp;&bull;&nbsp; Ansh Kumar 
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        // Initialize Reveal.js
+        Reveal.initialize({
+            width: 1920,
+            height: 1080,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'zoom', // Changed transition
+            margin: 0.04,
+        });
+
+        // Chart.js Configuration
+        Reveal.on('ready', event => {
+            const chartDefaultOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 18, family: "'Inter', sans-serif" },
+                            color: '#e0e0e0'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 16, family: "'Inter', sans-serif" }, color: '#a0a0a0' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    x: {
+                        ticks: { font: { size: 16, family: "'Inter', sans-serif" }, color: '#a0a0a0' },
+                        grid: { display: false }
+                    }
+                },
+                animation: { duration: 1500, easing: 'easeInOutQuart' }
+            };
+
+            // Chart 1: Internet Users vs Data Cost
+            new Chart(document.getElementById('internetUsersChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['2015', '2017', '2019', '2021', '2023', '2025'],
+                    datasets: [{
+                        type: 'line',
+                        label: 'Cost of 1GB Data (INR)',
+                        data: [270, 75, 15, 11, 8, 5],
+                        borderColor: '#f472b6',
+                        yAxisID: 'y1',
+                        tension: 0.3
+                    }, {
+                        type: 'bar',
+                        label: 'Internet Users (Millions)',
+                        data: [350, 480, 620, 750, 850, 900],
+                        backgroundColor: 'rgba(0, 168, 232, 0.6)',
+                        borderColor: '#00A8E8',
+                        borderWidth: 1
+                    }]
+                },
+                options: { ...chartDefaultOptions, 
+                    scales: { ...chartDefaultOptions.scales, 
+                        y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, ticks: {color: '#f472b6'} } 
+                    },
+                    plugins: { ...chartDefaultOptions.plugins, 
+                        annotation: {
+                            annotations: {
+                                arrow1: {
+                                    type: 'arrow',
+                                    xMin: '2015', xMax: '2017', yMin: 220, yMax: 100,
+                                    endCap: { type: 'arrow', size: 10, fill: true, color: 'white' },
+                                    backgroundColor: 'white',
+                                    borderWidth: 3
+                                },
+                                label1: {
+                                    type: 'label', xValue: '2017', yValue: 120,
+                                    content: ['Jio Launch Catalyst'], color: 'white',
+                                    font: { size: 18, weight: 'bold' }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart 2: OTT Revenue (SVoD vs AVoD)
+            new Chart(document.getElementById('ottRevenueChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['2018', '2021', '2025 (Est.)'],
+                    datasets: [{
+                        label: 'Subscription (SVoD)',
+                        data: [0.4, 1.1, 2.1],
+                        backgroundColor: '#00A8E8',
+                    }, {
+                        label: 'Advertising (AVoD)',
+                        data: [0.3, 0.8, 1.4],
+                        backgroundColor: '#007EA7',
+                    }]
+                },
+                options: { ...chartDefaultOptions, 
+                    scales: { x: { stacked: true }, y: { stacked: true, ...chartDefaultOptions.scales.y } } ,
+                    plugins: { ...chartDefaultOptions.plugins,
+                        title: { display: true, text: 'Revenue in Billion USD', color: 'white', font: {size: 16}},
+                        annotation: {
+                            annotations: {
+                                line1: {
+                                    type: 'line', yMin: 3.5, yMax: 3.5, borderColor: '#f472b6', borderWidth: 2,
+                                    label: { content: 'Total Market: $3.5B', enabled: true, position: 'end', backgroundColor: '#f472b6' }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart 3: UPI Transactions
+            new Chart(document.getElementById('upiChart'), {
+                type: 'line',
+                data: {
+                    labels: ['2018', '2020', '2022', '2025 (Aug)'],
+                    datasets: [{
+                        label: 'Monthly UPI Transactions (in Billions)',
+                        data: [0.3, 1.3, 7.8, 20],
+                        borderColor: '#00A8E8',
+                        backgroundColor: 'rgba(0, 168, 232, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: { ...chartDefaultOptions,
+                    plugins: { ...chartDefaultOptions.plugins,
+                        annotation: {
+                            annotations: {
+                                point1: {
+                                    type: 'point', xValue: '2025 (Aug)', yValue: 20,
+                                    radius: 10, backgroundColor: 'rgba(244, 114, 182, 0.8)'
+                                },
+                                label1: {
+                                    type: 'label', xValue: '2025 (Aug)', yValue: 20,
+                                    content: ['Explosive Growth'], position: 'start',
+                                    color: 'white', font: { size: 18, weight: 'bold'}
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
